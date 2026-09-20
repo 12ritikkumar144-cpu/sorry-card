@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>I'm Sorry 💗</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{display:grid;place-items:center;background:linear-gradient(135deg,#ffd8df,#f9c6d8,#d9d8ff);
+font-family:Trebuchet MS,system-ui,sans-serif;color:#30253a}
+.bg{position:fixed;inset:0;overflow:hidden}
+.b{position:absolute;border-radius:50%;opacity:.35;filter:blur(2px);animation:float 7s ease-in-out infinite}
+.b:nth-child(1){width:180px;height:180px;background:#fff;left:-60px;top:10%;animation-delay:-2s}
+.b:nth-child(2){width:220px;height:220px;background:#ff9eb4;right:-80px;bottom:0;animation-delay:-4s}
+.b:nth-child(3){width:100px;height:100px;background:#fff1ad;left:65%;top:8%;animation-delay:-1s}
+@keyframes float{50%{transform:translate(18px,-25px) scale(1.08)}}
+.card{position:relative;width:min(410px,90vw);min-height:570px;padding:45px 28px;
+border-radius:32px;background:rgba(255,250,249,.88);backdrop-filter:blur(12px);
+box-shadow:0 25px 70px #65465a30;text-align:center;overflow:hidden;
+animation:cardIn .9s cubic-bezier(.2,.9,.2,1)}
+@keyframes cardIn{from{opacity:0;transform:translateY(30px) scale(.92)}to{opacity:1;transform:none}}
+.heart{font-size:68px;animation:beat 1.4s infinite;margin-top:10px}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+h1{font-size:58px;margin:15px 0 8px;letter-spacing:-2px;color:#e85e7d;animation:pop 1s .35s both}
+@keyframes pop{from{opacity:0;transform:scale(.65)}to{opacity:1;transform:scale(1)}}
+.line{height:3px;width:80px;margin:18px auto 22px;background:#e9859b;border-radius:5px;animation:grow 1s .6s both}
+@keyframes grow{from{width:0}to{width:80px}}
+p{font-size:18px;line-height:1.65;margin:9px auto;max-width:315px}
+.note{margin-top:28px;padding:18px;border-radius:20px;background:#fff1f3;border:1px solid #f6d0d8}
+.note b{display:block;font-size:20px;margin-bottom:6px}
+.small{font-size:13px;color:#806c7c;margin-top:24px}
+.f{position:fixed;top:-30px;font-size:22px;animation:fall linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+</style>
+</head>
+<body>
+<div class="bg"><i class="b"></i><i class="b"></i><i class="b"></i></div>
+<main class="card">
+<div class="heart">💗</div>
+<h1>I'm Sorry</h1>
+<div class="line"></div>
+<p>I really, truly mean it.</p>
+<p>If I could turn back that moment, I would.</p>
+<div class="note"><b>🥺 One little promise</b>I’ll learn from my mistake, communicate better, and treat your feelings with more care.</div>
+<p style="margin-top:25px">You matter to me. ❤️</p>
+<div class="small">This little message is just for you.</div>
+</main>
+<script>
+const chars=["💗","💕","♡","🌸","✨","🩷"];
+for(let i=0;i<28;i++){
+ const s=document.createElement("span");s.className="f";s.textContent=chars[Math.floor(Math.random()*chars.length)];
+ s.style.left=Math.random()*100+"vw";s.style.animationDuration=(4+Math.random()*5)+"s";
+ s.style.animationDelay=(Math.random()*4)+"s";s.style.fontSize=(15+Math.random()*18)+"px";
+ document.body.appendChild(s);
+}
+</script>
+</body></html>
